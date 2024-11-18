@@ -1,0 +1,152 @@
+
+# program to accept string and count no of cap and small letter in it
+count=0
+count2=0
+s="Python is a Programming Language"
+for ele in s:
+    if ele==ele.lower():
+        count+=1
+    elif ele==ele.upper():
+        count2+=1
+print("no of capital letters :",count2)
+print("no of small letter :",count )
+
+def val(s):
+    count1=0
+    count2=0
+    for ele in s:
+        if ele.isupper():    
+            count1+=1
+        elif ele.islower():
+            count2+=1 
+    return count2, count1
+    # print(count2, count1)                    
+
+print(val("Python"))     
+     
+
+# write a program that function takes a list and return new list with distict ele
+def distinct(l=[]):
+    l2=[]
+    count=0
+    for ele in l:
+        if l.count(ele)==1:
+            l2.append(ele)
+    return l2
+li=[1,2,1,3,4,5,6,6,7]
+x=distinct(li)
+print(x)
+
+# write a program to print even no from a list
+
+def even(l=[]):
+    l2=[]
+    for ele in l:
+        if ele%2==0:
+            l2.append(ele)
+            # print("even :", ele)
+        else :
+            print("odd :", ele)  
+    return l2          
+
+li=[1,2,3,4,5,6,7,8,9,10]   
+
+print(even(li))
+
+# write a program to check passed string is palindrome or not
+
+def palindrome(s):
+    if s==s[::-1]:
+        return "palndrome"
+    else:
+        return "not palindrome"    
+
+x=palindrome("hello")
+print(x)        
+
+# Check weather the sentence is panagram or not
+
+
+l=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+def panagram(s):
+    for ele in s:
+        if ele in l:
+        #     print("panagram :", s)
+            return "panagram ", s
+        elif ele not in l:
+            return "not panagram : ", s
+            # print("not panagram :", s)
+
+print(panagram(" the quick fox jumps over the lazy dog"))                
+
+# program to accept - seperated words as input and output as sorted - seperated string
+
+def sort_ele(s):
+    a=s.split('-')
+    a=sorted(a)
+    print("after sorting :", a)
+    print("before sorting :", s)
+
+x=sort_ele("green-red-black-yellow") 
+print(x)   
+
+# write a python function to create and print list where the values are squares of numbers between 1 to 30
+        
+n=30
+l=[]
+for ele in range(1,n+1):
+    l.append(ele**2)
+print(l)
+
+def sq_no():
+    l=[]
+    for ele in range(1,31):
+        l.append(ele**2)
+    return l
+
+print(sq_no())
+
+# write a python program to execute a string containing pyton code
+
+code="""
+def fun(x,y):
+    return x*y
+print(fun(19,2))    
+"""
+code2="""
+def fun(x=[]):
+    for ele in x:
+        if ele%2==0:
+            print("even :", ele, end=" ")
+        else:
+            print("odd :", ele, end=" ")    
+li=[1,2,3,4,5,6,7,8]
+x=fun(li)            
+"""
+exec(code)
+exec(code2)
+
+# converting str to upper using lambda functions
+s="hello"
+x=lambda s:s.upper()
+print(x(s.upper()))
+
+y=lambda x,y:x*y
+print(y(2,3))
+
+l=[1,2,3,4,5,6]
+i=iter(l)
+print(next(i)) 
+print(next(i))
+print(next(i))
+print(next(i))
+print(next(i))
+print(next(i))
+print(next(i))
+
+l=[22,3,44,55,66]
+ite=iter(l)
+for ele in ite:
+    print(ele)
+    print(next(ele))
